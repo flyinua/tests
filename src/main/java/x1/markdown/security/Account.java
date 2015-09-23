@@ -8,6 +8,7 @@ package x1.markdown.security;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.security.core.GrantedAuthority;
 /**
  *
@@ -18,6 +19,7 @@ public class Account {
 
     @Id
     private String id;
+    @Indexed
     private String username;
     private String password;
     private List<GrantedAuthority> roles;
