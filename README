@@ -1,0 +1,15 @@
+Local Deployment
+
+Load a local MongoDB database on port 27017.
+
+$ mvn clean install  
+$ mvn spring-boot:run
+
+OR
+
+$ mvn clean package  
+$ java -jar x1-markdown.jar --spring.profiles.active=dev
+
+Navigate to 
+http://localhost:8080/x1-markdown (index.html)
+http://localhost:8080/x1-markdown/converter (POST)

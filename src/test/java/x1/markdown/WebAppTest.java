@@ -19,6 +19,6 @@ import org.springframework.test.context.web.WebAppConfiguration;
 @SpringApplicationConfiguration(classes = WebApplication.class)
 @WebAppConfiguration
 @IntegrationTest("server.port:0")
-public class WebAppTest {
+public abstract class WebAppTest {
     
 }
