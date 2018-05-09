@@ -1,3 +1,29 @@
+Markdown
+REST service that takes markdown-style text as a POST request body, and returns HTML. Backlog
+• Lines starting with #, ##, ### etc. become headers <h1/>, <h2/>, <h3/> etc.
+• Simple lines become paragraphs (just a line – > <p>just a line</p>)
+• Text wrapped in * ...* becomes emphasized (*lorem* – > <em>lorem</em>
+• Text wrapped in ** ...* * becomes strong (**lorem** – > <strong>lorem</strong>)
+• Links support ([example link](h ttp://example.com/) –> <a
+href=“ h ttp://example.com/” > example link</a>)
+• Other than that, no transformation should happen to text
+Extra credit
+• Application is deployed somewhere (heroku, jelastic etc.)
+• Authorization
+• Stats are saved into mongodb (e.g. who converted what when)
+Example
+INPUT:
+#Loremipsum
+Dolorsitamet,
+consetetur*sadipscing*elitr, sed[diam](http://mysite.com)nonumyeirmodtempor
+OUTPUT:
+<html>
+<body>
+<h1>Loremipsum</h1>
+<p>Dolorsitamet,</p>
+<p>consetetur<em>sadipscing</em>elitr,</p> <p>sed<ahref=”http://mysite.com”>diam</a>nonumyeirmodtempor</p> </body>
+</html>
+
 Local Deployment
 
 Load a local MongoDB database on port 27017.
