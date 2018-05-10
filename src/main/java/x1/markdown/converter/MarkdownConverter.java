@@ -39,7 +39,7 @@ public final class MarkdownConverter {
             buffer.append("<html>\n").append("<body>\n").append(text.trim()).append("\n</body>\n").append("</html>");
             return buffer.toString();
 
-        } catch (Throwable th) {
+        } catch (Exception th) {
             throw new MarkdownConverterException(th);
         }
     }
